@@ -1,191 +1,139 @@
+/* ==========================================================================
+   MAIL SENDER MODULE (Desktop & Mobile Optimized)
+   A modern, responsive, high-contrast dark theme matching AIO portal design.
+   ========================================================================== */
+
 /* =========================
-   MODULE ROOT
+   MODULE ROOT & WRAPPER
 ========================= */
 
 .mail-page {
-    padding: 0px;
-    background: rgb(15, 15, 5);
-
-    height: 100%;
-    overflow: hidden;
+    min-height: 100%;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(30, 58, 138, 0.15), transparent 45%),
+        radial-gradient(circle at 90% 90%, rgba(15, 23, 42, 0.4), transparent 45%),
+        #090d16;
+    color: #e2e8f0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+    box-sizing: border-box;
 }
 
 .mail-page .mail-module-content {
-    height: calc(100vh - 60px);
-    overflow-y: auto;
-}
-
-.mail-page {
-    padding: 0px;
-    background: rgb(15, 15, 5);
-    height: 100%;
-    overflow: hidden;
-}
-
-/* =========================
-   MODULE CONTENT
-========================= */
-
-.mail-page .mail-module-content {
-    margin-top: 0px;
-    height: calc(100vh - 60px);
-    overflow-y: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px 40px;
+    box-sizing: border-box;
+    min-height: calc(100vh - 56px);
 }
 
 .mail-page .mail-container {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 16px;
+    width: 100%;
 }
 
 /* =========================
-   SECTION CARD
+   SECTION CARDS
 ========================= */
 
 .mail-page .section-card {
-    background: #9fbec4;
-    padding: 16px;
-    border-radius: 8px;
-    border: 1px solid #8aa9b0;
+    background: linear-gradient(180deg, rgba(17, 24, 39, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(12px);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+.mail-page .section-card:hover {
+    border-color: rgba(59, 130, 246, 0.25);
+}
+
+.mail-page .section-card h3 {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #f8fafc;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 /* =========================
-   TABLE
+   INPUTS & FORM CONTROLS
 ========================= */
 
-.mail-page .mail-table {
-    width: 50%;
-    border-collapse: collapse;
-}
-
-.mail-page .mail-table th,
-.mail-page .mail-table td {
-    padding: 8px;
-    border-bottom: 1px solid #374151;
-    text-align: left;
-}
-
-.mail-page .mail-table th {
-    background: #7a818b;
-}
-
-/* =========================
-   INPUTS
-========================= */
-
-.mail-page input,
+.mail-page input:not([type="checkbox"]),
 .mail-page textarea,
 .mail-page select {
-    background: #ffffff;
-    border: 1px solid #3f5173;
-    color: #1a1c20;
-    padding: 6px 8px;
-    border-radius: 10px;
+    background: #0b0f19;
+    border: 1px solid #1f293d;
+    color: #f1f5f9;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.mail-page input:not([type="checkbox"])::placeholder,
+.mail-page textarea::placeholder {
+    color: #64748b;
+}
+
+.mail-page input:not([type="checkbox"]):focus,
+.mail-page textarea:focus,
+.mail-page select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: #0f172a;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
 }
 
 /* =========================
-   BUTTONS (PROFESSIONAL)
+   GLOBAL BUTTONS
 ========================= */
 
 .mail-page button {
     background: #2563eb;
     color: #ffffff;
-    border: 1px solid transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 8px 14px;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 13px;
-    font-weight: 500;
-    line-height: 1;
+    font-weight: 600;
+    line-height: 1.2;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    transition: all 0.15s ease;
+    transition: all 0.18s ease;
     white-space: nowrap;
+    user-select: none;
+    box-sizing: border-box;
 }
 
-.mail-page button:hover {
+.mail-page button:hover:not(:disabled) {
     background: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
 }
 
-.mail-page button:active {
-    transform: translateY(1px);
+.mail-page button:active:not(:disabled) {
+    transform: translateY(0);
 }
 
-/* Secondary buttons */
-.mail-page .row-actions button:first-child,
-.mail-page .mail-toolbar button:nth-child(3),
-.mail-page .modal-actions button:first-child {
-    background: #374151;
-    border: 1px solid #4b5563;
-}
-
-.mail-page .row-actions button:first-child:hover,
-.mail-page .mail-toolbar button:nth-child(3):hover,
-.mail-page .modal-actions button:first-child:hover {
-    background: #4b5563;
-}
-
-/* Danger buttons (Delete) */
-.mail-page .row-actions button:last-child {
-    background: #dc2626;
-}
-
-.mail-page .row-actions button:last-child:hover {
-    background: #b91c1c;
-}
-
-/* Send buttons */
-.mail-page .send-btn {
-    background: #16a34a;
-    padding: 10px 18px;
-    font-weight: 600;
-}
-
-.mail-page .send-btn:hover {
-    background: #15803d;
-}
-
-/* Resend button */
-.mail-page .resend-btn {
-    background: #f59e0b;
-    color: #111827;
-}
-
-.mail-page .resend-btn:hover {
-    background: #d97706;
-}
-
-/* =========================
-   EMPLOYEE LIST
-========================= */
-
-.mail-page .employee-list-box {
-    height: 280px;
-    overflow-y: auto;
-    border: 3px solid #800707;
-    border-radius: 6px;
-    padding: 0px;
-    background: #7c71bb;
-}
-
-.mail-page .employee-row {
-    display: grid;
-    font-size: 14px;
-    grid-template-columns: 40px 130px 180px 240px 120px 160px;
-    align-items: center;
-    gap: 18px;
-    border-bottom: 1px solid #2b3950;
-}
-
-.mail-page .employee-row:hover {
-    background: #4c5f86;
-}
-
-.mail-page .row-actions {
-    display: flex;
-    gap: 6px;
+.mail-page button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
 /* =========================
@@ -195,14 +143,193 @@
 .mail-page .mail-toolbar {
     display: flex;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.mail-page .mail-toolbar input {
+    flex: 1 1 240px;
+    min-width: 200px;
+}
+
+/* Select All button */
+.mail-page .mail-toolbar button:nth-of-type(1) {
+    background: #2563eb;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.mail-page .mail-toolbar button:nth-of-type(1):hover {
+    background: #1d4ed8;
+}
+
+/* Clear button */
+.mail-page .mail-toolbar button:nth-of-type(2) {
+    background: #1e293b;
+    color: #94a3b8;
+    border: 1px solid #334155;
+}
+
+.mail-page .mail-toolbar button:nth-of-type(2):hover {
+    background: #334155;
+    color: #f1f5f9;
+}
+
+/* Add Employee button */
+.mail-page .mail-toolbar button:nth-of-type(3) {
+    background: #4f46e5;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.mail-page .mail-toolbar button:nth-of-type(3):hover {
+    background: #4338ca;
 }
 
 .mail-page .selected-count {
     margin-left: auto;
-    color: #0f5132;
+    background: rgba(59, 130, 246, 0.12);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 12.5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* =========================
+   EMPLOYEE LIST & TABLE
+========================= */
+
+.mail-page .employee-list-box {
+    max-height: 380px;
+    min-height: 220px;
+    overflow-y: auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #1e293d;
+    border-radius: 10px;
+    background: #090e17;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.mail-page .employee-row {
+    display: grid;
+    font-size: 13.5px;
+    grid-template-columns: 36px 110px 170px minmax(200px, 1.4fr) 110px 140px;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    min-width: 720px;
+    color: #e2e8f0;
+    transition: background-color 0.15s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.mail-page .employee-row:last-child {
+    border-bottom: none;
+}
+
+.mail-page .employee-row:hover {
+    background: rgba(59, 130, 246, 0.08);
+}
+
+.mail-page .employee-row:has(input[type="checkbox"]:checked) {
+    background: rgba(37, 99, 235, 0.12);
+}
+
+.mail-page .employee-row input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    accent-color: #2563eb;
+    cursor: pointer;
+    margin: 0;
+}
+
+.mail-page .emp-code {
+    font-weight: 700;
+    color: #93c5fd;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+}
+
+.mail-page .emp-name {
     font-weight: 500;
+    color: #f8fafc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mail-page .emp-email {
+    color: #94a3b8;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mail-page .emp-unit {
+    color: #cbd5e1;
+    font-size: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 3px 8px;
+    border-radius: 6px;
+    text-align: center;
+    width: fit-content;
+}
+
+/* Row inline actions & edit state */
+.mail-page .row-actions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.mail-page .row-actions button {
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+/* Edit / Save / Delete Buttons in row */
+.mail-page .row-actions button:first-child {
+    background: #1e293b;
+    color: #93c5fd;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.mail-page .row-actions button:first-child:hover {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.mail-page .row-actions button:last-child {
+    background: rgba(220, 38, 38, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.mail-page .row-actions button:last-child:hover {
+    background: #dc2626;
+    color: #ffffff;
+}
+
+/* Inputs when row is in edit mode */
+.mail-page .employee-row input:not([type="checkbox"]) {
+    background: #0f172a;
+    border: 1px solid #3b82f6;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    width: 100%;
 }
 
 /* =========================
@@ -211,79 +338,426 @@
 
 .mail-page .mail-subject {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .mail-page .mail-body {
     width: 100%;
-    height: 120px;
+    min-height: 120px;
+    padding: 12px 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
 }
 
 /* =========================
-   SEND SECTION
+   SEND ACTION SECTION
 ========================= */
 
 .mail-page .mail-send-section {
     display: flex;
-    gap: 10px;
+    gap: 12px;
+    align-items: center;
+}
+
+.mail-page .send-btn {
+    padding: 11px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    min-width: 140px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Send Selected (Green Gradient) */
+.mail-page .send-btn:first-child {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.mail-page .send-btn:first-child:hover:not(:disabled) {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35);
+}
+
+/* Send All (Blue Gradient) */
+.mail-page .send-btn:last-child {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.mail-page .send-btn:last-child:hover:not(:disabled) {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
 }
 
 /* =========================
-   STATUS
+   STATUS CARDS & LOGS
 ========================= */
 
 .mail-page .mail-status {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.mail-page .sent-block,
+.mail-page .failed-block {
+    background: #090e17;
+    border: 1px solid #1e293d;
+    border-radius: 10px;
+    padding: 14px 16px;
+    max-height: 260px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.mail-page .sent-block h4 {
+    margin: 0 0 10px 0;
+    color: #4ade80;
+    font-size: 14px;
+    font-weight: 600;
     display: flex;
-    gap: 40px;
+    align-items: center;
+    gap: 6px;
+}
+
+.mail-page .failed-block h4 {
+    margin: 0 0 10px 0;
+    color: #f87171;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.mail-page .sent-block div {
+    padding: 6px 0;
+    color: #86efac;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.mail-page .failed-block div {
+    padding: 6px 0;
+    color: #fca5a5;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    word-break: break-word;
+}
+
+.mail-page .failed-block button,
+.mail-page .resend-btn {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #0f172a;
+    font-weight: 700;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    margin-top: 12px;
+}
+
+.mail-page .failed-block button:hover,
+.mail-page .resend-btn:hover {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
 }
 
 /* =========================
-   MODAL
+   ADD EMPLOYEE MODAL
 ========================= */
 
 .mail-page .mail-modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    padding: 16px;
+    box-sizing: border-box;
+    animation: mailModalFadeIn 0.2s ease-out;
+}
+
+@keyframes mailModalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .mail-page .mail-modal {
-    background: #849dd3;
-    padding: 20px;
-    border-radius: 8px;
-    width: 400px;
+    background: #0f172a;
+    border: 1px solid rgba(59, 130, 246, 0.28);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(59, 130, 246, 0.15);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 440px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    box-sizing: border-box;
+    animation: mailModalScaleUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes mailModalScaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.mail-page .mail-modal h3 {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #f8fafc;
+}
+
+.mail-page .mail-modal input {
+    background: #090e17;
+    border: 1px solid #1e293d;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: #f1f5f9;
 }
 
 .mail-page .modal-actions {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
+    margin-top: 10px;
 }
 
-.mail-page .mail-toolbar {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-    align-items: center;
+.mail-page .modal-actions button:first-child {
+    background: #1e293b;
+    color: #94a3b8;
+    border: 1px solid #334155;
 }
 
-.mail-page .mail-toolbar input {
-    flex: 1;
-    max-width: 420px;
+.mail-page .modal-actions button:first-child:hover {
+    background: #334155;
+    color: #f1f5f9;
 }
 
-.mail-page .employee-row input[type="checkbox"] {
-    transform: scale(0.9);
+.mail-page .modal-actions button:last-child {
+    background: #2563eb;
+    color: #ffffff;
 }
 
-.mail-page .row-actions button {
-    font-size: 12px;
-    padding: 6px 10px;
+.mail-page .modal-actions button:last-child:hover {
+    background: #1d4ed8;
+}
+
+/* Legacy table helper if used */
+.mail-page .mail-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.mail-page .mail-table th,
+.mail-page .mail-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #1e293d;
+    text-align: left;
+}
+
+.mail-page .mail-table th {
+    background: #111827;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   SCROLLBAR STYLING
+   ========================================================================== */
+
+.mail-page .employee-list-box::-webkit-scrollbar,
+.mail-page .mail-module-content::-webkit-scrollbar,
+.mail-page .sent-block::-webkit-scrollbar,
+.mail-page .failed-block::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.mail-page .employee-list-box::-webkit-scrollbar-track,
+.mail-page .mail-module-content::-webkit-scrollbar-track,
+.mail-page .sent-block::-webkit-scrollbar-track,
+.mail-page .failed-block::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.mail-page .employee-list-box::-webkit-scrollbar-thumb,
+.mail-page .mail-module-content::-webkit-scrollbar-thumb,
+.mail-page .sent-block::-webkit-scrollbar-thumb,
+.mail-page .failed-block::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 4px;
+}
+
+.mail-page .employee-list-box::-webkit-scrollbar-thumb:hover,
+.mail-page .mail-module-content::-webkit-scrollbar-thumb:hover,
+.mail-page .sent-block::-webkit-scrollbar-thumb:hover,
+.mail-page .failed-block::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================================================
+   MOBILE & RESPONSIVE BREAKPOINTS
+   Ensures seamless usability, tap ergonomics, and visual elegance on phones.
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .mail-page .mail-module-content {
+        padding: 12px 10px 32px;
+    }
+
+    .mail-page .mail-container {
+        gap: 12px;
+    }
+
+    .mail-page .section-card {
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    .mail-page .section-card h3 {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    /* Toolbar adapts to clean stacked/wrap layout */
+    .mail-page .mail-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+
+    .mail-page .mail-toolbar input {
+        width: 100%;
+        max-width: 100%;
+        order: 1;
+        font-size: 14px;
+        padding: 9px 12px;
+    }
+
+    .mail-page .mail-toolbar button {
+        flex: 1 1 auto;
+        order: 2;
+        padding: 9px 10px;
+        font-size: 12px;
+        min-height: 38px;
+        justify-content: center;
+    }
+
+    .mail-page .selected-count {
+        width: 100%;
+        order: 3;
+        margin-left: 0;
+        text-align: center;
+        justify-content: center;
+        padding: 6px 12px;
+    }
+
+    /* Employee list box: touch-friendly scroll container */
+    .mail-page .employee-list-box {
+        max-height: 320px;
+    }
+
+    .mail-page .employee-row {
+        gap: 10px;
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    /* Email editor inputs */
+    .mail-page .mail-subject {
+        font-size: 14px;
+        padding: 9px 12px;
+        margin-bottom: 10px;
+    }
+
+    .mail-page .mail-body {
+        min-height: 100px;
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    /* Send section buttons become full-width touch targets */
+    .mail-page .mail-send-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .mail-page .send-btn {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 14px;
+        min-height: 44px;
+        justify-content: center;
+    }
+
+    /* Status cards stack cleanly on mobile */
+    .mail-page .mail-status {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .mail-page .sent-block,
+    .mail-page .failed-block {
+        max-height: 220px;
+        padding: 12px 14px;
+    }
+
+    /* Modal fits mobile screens gracefully */
+    .mail-page .mail-modal {
+        padding: 20px 16px;
+        margin: 10px;
+        border-radius: 14px;
+    }
+
+    .mail-page .mail-modal h3 {
+        font-size: 17px;
+    }
+
+    .mail-page .mail-modal input {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .mail-page .modal-actions {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .mail-page .modal-actions button {
+        flex: 1;
+        min-height: 42px;
+        font-size: 13.5px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .mail-page .mail-toolbar button {
+        font-size: 11.5px;
+        padding: 8px 6px;
+    }
+
+    .mail-page .row-actions button {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
 }
