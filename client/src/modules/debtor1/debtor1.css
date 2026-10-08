@@ -1,0 +1,254 @@
+/* Root */
+.debtor-page {
+    padding: 24px 28px;
+    background-color: #f4f6f8;
+    min-height: 100%;
+}
+
+/* Title */
+.debtor-page h2 {
+    margin-bottom: 18px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.debtor-page .debtor-mail-panel {
+    margin-bottom: 20px;
+    padding: 18px 20px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.debtor-page .debtor-mail-panel-head,
+.debtor-page .debtor-mail-controls,
+.debtor-page .debtor-mail-status-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.debtor-page .debtor-mail-panel-head {
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.debtor-page .debtor-mail-panel h3 {
+    margin: 0 0 4px;
+    font-size: 17px;
+    color: #1f2937;
+}
+
+.debtor-page .debtor-mail-panel p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.debtor-page .debtor-mail-status {
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.debtor-page .debtor-mail-status.is-enabled { color: #166534; background: #dcfce7; }
+.debtor-page .debtor-mail-status.is-disabled { color: #475569; background: #e2e8f0; }
+.debtor-page .debtor-mail-controls { flex-wrap: wrap; }
+
+.debtor-page .debtor-mail-recipient-field,
+.debtor-page .debtor-mail-time-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12px;
+    color: #475569;
+}
+
+.debtor-page .debtor-mail-recipient-field { flex: 1 1 280px; }
+
+.debtor-page .debtor-mail-recipient-field input,
+.debtor-page .debtor-mail-time-field input {
+    padding: 8px 10px;
+    border: 1px solid #94a3b8;
+    border-radius: 5px;
+}
+
+.debtor-page .debtor-mail-toggle {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: #334155;
+}
+
+.debtor-page .debtor-mail-primary,
+.debtor-page .debtor-mail-secondary {
+    margin-right: 0;
+    padding: 8px 12px;
+    color: #fff;
+}
+
+.debtor-page .debtor-mail-primary { background: #2563eb; }
+.debtor-page .debtor-mail-primary:hover { background: #1d4ed8; }
+.debtor-page .debtor-mail-secondary { background: #64748b; }
+.debtor-page .debtor-mail-secondary:hover { background: #475569; }
+
+.debtor-page .debtor-mail-primary:disabled,
+.debtor-page .debtor-mail-secondary:disabled { cursor: wait; opacity: 0.65; }
+
+.debtor-page .debtor-mail-status-row {
+    flex-wrap: wrap;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #e5e7eb;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.debtor-page .debtor-mail-status-row strong { color: #1f2937; }
+.debtor-page .debtor-mail-error { flex-basis: 100%; color: #b91c1c; }
+
+/* Search wrapper */
+.debtor-page .debtor-search {
+    margin-bottom: 16px;
+}
+
+/* Input */
+.debtor-page .debtor-search input {
+    padding: 8px 10px;
+    width: 280px;
+    border: 0.5px solid #374151;
+    border-radius: 6px;
+    outline: none;
+}
+
+/* Focus */
+.debtor-page .debtor-search input:focus {
+    border-color: #2563eb;
+    border-width: 2px;
+}
+
+/* Table wrapper */
+.debtor-page .debtor-table-wrapper {
+    overflow-x: auto;
+}
+
+/* Table */
+.debtor-page .debtor-table {
+    width: 100%;
+    max-width: 1500px;
+    border-collapse: collapse;
+    background: #fff;
+    border: 2px solid #1f2937;
+    /* strong outer border */
+    border-radius: 8px;
+    overflow: hidden;
+    /* keeps rounded corners clean */
+}
+
+/* Header */
+.debtor-page .debtor-table thead {
+    background-color: #1f2937;
+    color: #fff;
+}
+
+/* Header cells */
+.debtor-page .debtor-table th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 500;
+    border: 1.5px solid #374151;
+    /* strong border */
+}
+
+/* Body cells */
+.debtor-page .debtor-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e5e7eb;
+    border: 1px solid #acbeda;
+    /* lighter inner grid */
+}
+
+
+/* Hover */
+.debtor-page .debtor-table tbody tr:hover {
+    background-color: #e7ebfa;
+}
+
+/* Inputs */
+.debtor-page input[type="number"] {
+    width: 100px;
+    padding: 6px;
+    border: 1px solid #5a4444;
+    border-radius: 4px;
+}
+
+/* Buttons */
+.debtor-page button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    font-size: 13px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Primary (Save/Edit) */
+.debtor-page button:first-of-type {
+    background-color: #2563eb;
+    color: #fff;
+}
+
+.debtor-page button:first-of-type:hover {
+    background-color: #1d4ed8;
+}
+
+/* Secondary (Cancel) */
+.debtor-page button:last-of-type {
+    background-color: #6b7280;
+    color: #fff;
+}
+
+.debtor-page button:last-of-type:hover {
+    background-color: #4b5563;
+}
+
+/* No data */
+.debtor-page .debtor-no-data {
+    text-align: center;
+    padding: 20px;
+    color: #6b7280;
+}
+
+/* =========================
+   HEADER ROW (SEARCH + BUTTON)
+========================= */
+.debtor-page .debtor-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+/* Right-side actions */
+.debtor-page .debtor-header-actions {
+    display: flex;
+    align-items: center;
+}
+
+/* Toggle button */
+.debtor-page .debtor-toggle-btn {
+    background-color: #111827;
+    color: #fff;
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
+
+.debtor-page .debtor-toggle-btn:hover {
+    background-color: #374151;
+}

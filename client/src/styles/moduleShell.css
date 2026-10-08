@@ -1,0 +1,75 @@
+/* Shared module header and topbar styles.
+   Use a unique root wrapper class for every module, for example:
+   <div className="debtorGstin-module-scope"> ... </div>
+
+   This keeps each module's own CSS scoped to its wrapper,
+   while shared topbar styles remain global and reusable.
+*/
+
+.module-shell-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 48px;
+    padding: 0.4rem 1rem;
+    margin: 0;
+    background: #111827;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.module-shell-back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: #1e3a5f;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-sizing: border-box;
+}
+
+.module-shell-back-btn:hover:not(:disabled) {
+    background: #264a78;
+    transform: translateY(-1px);
+}
+
+.module-shell-back-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.module-shell-user {
+    color: #e5e7eb;
+    font-size: 0.86rem;
+    line-height: 1.2;
+}
+
+.module-shell-user strong {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.module-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (max-width: 640px) {
+    .module-shell-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.65rem 1rem;
+        min-height: auto;
+    }
+}

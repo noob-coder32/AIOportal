@@ -1,0 +1,59 @@
+.division-page {
+    padding: 0px;
+}
+
+.division-page h2 {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* FORM */
+.division-page .division-form {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.division-page .division-form input,
+.division-page .division-form select {
+    padding: 8px;
+}
+
+.division-page .division-form button {
+    width: 30%;
+    justify-self: center;
+    grid-column: span 3;
+    padding: 10px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* TABLE */
+.division-page .division-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-left: 10px;
+
+}
+
+.division-page .division-table th,
+.division-page .division-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Override hover safely */
+.division-page .division-table tr:hover {
+    background-color: #f3f4f6;
+}
+
+/* Header style */
+.division-page .division-table th {
+    background-color: #e5e7eb;
+}

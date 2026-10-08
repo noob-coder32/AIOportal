@@ -1,0 +1,481 @@
+/* ===== DARK MODE THEME + GLOBAL RESET (SCOPED) ===== */
+.hr-module-scope {
+  /* brand + accents — softer blues on dark background */
+  --brand-500: #4da3ff;
+  --brand-600: #1e90ff;
+  --accent-500: #64b5f6;
+
+  /* app surface / page */
+  --app-bg: #1a1c1f;
+  --page-bg: #121417;
+  --surface: #1f2226;
+  --border: #2b2f35;
+
+  /* misc */
+  --muted: #aaa;
+  --table-head: #2c3238;
+
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #e4e7eb;
+  line-height: 1.5;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================= */
+/* Thin Top Bar */
+/* ============================= */
+
+.hr-module-scope .hr-module-header {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;
+  background: #020617;
+  border-bottom: 1px solid #1f2937;
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  font-size: 14px;
+}
+
+/* Back button */
+.hr-module-scope .hr-back-btn {
+  background: transparent;
+  border: none;
+  color: #93c5fd;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+.hr-module-scope .hr-back-btn:hover {
+  text-decoration: underline;
+}
+
+/* User info */
+.hr-module-scope .hr-module-user {
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+.hr-module-scope .hr-module-user strong {
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+.hr-module-scope .hr-module-content {
+  padding: 2px;
+}
+
+/* ===== BASE RESET ===== */
+.hr-module-scope * {
+  box-sizing: border-box;
+}
+
+.hr-module-scope html,
+.hr-module-scope body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  height: 100%;
+}
+
+/* Full-page dark background (scoped) */
+.hr-module-scope {
+  background-color: var(--page-bg);
+}
+
+/* Clean, minimal anchor style */
+.hr-module-scope a {
+  color: var(--brand-500);
+  text-decoration: none;
+}
+
+.hr-module-scope a:hover {
+  text-decoration: underline;
+}
+
+/* Base button reset */
+.hr-module-scope button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  color: inherit;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.hr-module-scope .top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1b1f26;
+  color: #f5f7fa;
+  padding: 0.8rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid #2d3137;
+  position: sticky;
+  /* The shared module header scrolls away, so keep this bar flush with the viewport. */
+  top: 0;
+  z-index: 100;
+}
+
+.hr-module-scope .top-nav .nav-left h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f0f4f8;
+}
+
+.hr-module-scope .top-nav .nav-right button {
+  background: transparent;
+  border: none;
+  color: #b0b3b8;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.hr-module-scope .top-nav .nav-right button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.hr-module-scope .top-nav .nav-right .active {
+  background: var(--brand-500);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===== PAGE CONTAINER ===== */
+.hr-module-scope .assignment-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1.5rem;
+  min-height: calc(100vh - 88px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.hr-module-scope .page-title {
+  text-align: center;
+  font-weight: 600;
+  color: #f0f4f8;
+  margin-bottom: 2 rem;
+}
+
+/* ===== CARD LAYOUTS ===== */
+.hr-module-scope .card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  margin-bottom: 2rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.hr-module-scope .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Section heading */
+.hr-module-scope .section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-bottom: 2px solid #2d3137;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: #e8ecf0;
+}
+
+/* ===== FORM STYLING ===== */
+.hr-module-scope .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.hr-module-scope label,
+.hr-module-scope .form-group > label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: #f8fafc;
+}
+
+.hr-module-scope select,
+.hr-module-scope input[type="text"] {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  font-size: 0.95rem;
+  border: 1px solid #3a3f46;
+  border-radius: 6px;
+  background-color: #262a30;
+  color: #e4e7eb;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.hr-module-scope select:focus,
+.hr-module-scope input:focus {
+  border-color: var(--accent-500);
+  box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.15);
+  outline: none;
+}
+
+.hr-module-scope .readonly-input {
+  background-color: #2a2e34;
+  color: #aaa;
+}
+
+/* ===== BUTTON ===== */
+.hr-module-scope .form-actions {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.hr-module-scope .btn-primary {
+  background-color: var(--brand-500);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.hr-module-scope .btn-primary:hover {
+  background-color: var(--brand-600);
+  transform: translateY(-1px);
+}
+
+.hr-module-scope .btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* ===== TABLE ===== */
+.hr-module-scope .assignments-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+.hr-module-scope .assignments-table th,
+.hr-module-scope .assignments-table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #2e3339;
+}
+
+.hr-module-scope .assignments-table thead {
+  background-color: var(--table-head);
+  font-weight: 600;
+  color: #e4e7eb;
+}
+
+.hr-module-scope .assignments-table th {
+  background-color: var(--table-head);
+  color: #f8fafc;
+}
+
+.hr-module-scope .assignments-table tbody tr:nth-child(even) {
+  background-color: #1d2024;
+}
+
+.hr-module-scope .assignments-table tbody tr:hover {
+  background-color: #23272d;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .hr-module-scope .assignment-page {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .hr-module-scope .btn-primary {
+    width: 100%;
+  }
+
+  .hr-module-scope .form-actions {
+    text-align: center;
+  }
+
+  .hr-module-scope .assignments-table th,
+  .hr-module-scope .assignments-table td {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== EMPTY STATE ===== */
+.hr-module-scope .empty-message {
+  text-align: center;
+  color: var(--muted);
+  margin: 1rem 0;
+}
+
+/* ===== ACTION BUTTON STYLES ===== */
+.hr-module-scope .btn-edit {
+  background-color: var(--accent-500);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.hr-module-scope .btn-edit:hover {
+  background-color: #8a71f8;
+  transform: translateY(-1px);
+}
+
+.hr-module-scope .btn-danger {
+  background-color: #d9534f;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.hr-module-scope .btn-danger:hover {
+  background-color: #c9302c;
+  transform: translateY(-1px);
+}
+
+.hr-module-scope .btn-success {
+  background-color: #5cb85c;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.hr-module-scope .btn-success:hover {
+  background-color: #449d44;
+  transform: translateY(-1px);
+}
+
+.hr-module-scope .btn-secondary {
+  background-color: #444b52;
+  color: #ddd;
+  border: none;
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  margin-left: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.hr-module-scope .btn-secondary:hover {
+  background-color: #5a6169;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ===== FIXED TOAST POPUP ===== */
+.hr-module-scope .toast-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  padding: 12px 18px;
+  border-radius: 6px;
+
+  font-weight: 500;
+  font-size: 0.9rem;
+
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+  z-index: 9999;
+  animation: slideIn 0.3s ease;
+}
+
+/* Success */
+.hr-module-scope .toast-popup.success {
+  background-color: #1e7e34;
+}
+
+/* Error */
+.hr-module-scope .toast-popup.error {
+  background-color: #b02a37;
+}
+
+/* Slide animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============================= */
+/* Masters Sub Navigation (Employees / HODs) */
+/* ============================= */
+
+.hr-module-scope .masters-wrapper {
+  padding-top: 1rem;
+}
+
+/* Container */
+.hr-module-scope .sub-nav {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0 20px 0;
+  border-bottom: 1px solid #2d3137;
+}
+
+/* Base button style */
+.hr-module-scope .sub-nav button {
+  padding: 6px 18px;
+  font-size: 0.95rem;
+  border-radius: 20px;
+  background: #1f2226;
+  border: 1px solid #2d3137;
+  color: #b0b3b8;
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.hr-module-scope .sub-nav button:hover {
+  background: rgba(77, 163, 255, 0.12);
+  border-color: var(--brand-500);
+  color: #ffffff;
+}
+
+/* Active tab */
+.hr-module-scope .sub-nav button.active {
+  background: var(--brand-500);
+  color: #ffffff;
+  border-color: var(--brand-500);
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(77, 163, 255, 0.4);
+}

@@ -1,0 +1,273 @@
+.coilLineEntry-module-scope {
+    --cle-bg-top: #fff6ec;
+    --cle-bg-bottom: #edf4fb;
+    --cle-card: rgba(255, 255, 255, 0.94);
+    --cle-card-border: rgba(15, 23, 42, 0.08);
+    --cle-title: #10233c;
+    --cle-text: #516174;
+    --cle-label: #334155;
+    --cle-input-border: #cbd5e1;
+    --cle-table-border: #dbe4ee;
+    --cle-row-alt: #f8fbff;
+    --cle-row-hover: #fff3e4;
+    --cle-accent: #f97316;
+    --cle-accent-deep: #ea580c;
+    --cle-header-bg: #1e293b;
+    --cle-header-text: #f8fafc;
+    --cle-shadow: 0 22px 60px rgba(15, 23, 42, 0.1);
+    width: 100%;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(244, 114, 182, 0.12), transparent 22%),
+        linear-gradient(180deg, var(--cle-bg-top) 0%, #f4f8fc 48%, var(--cle-bg-bottom) 100%);
+}
+
+.coilLineEntry-module-scope .coil-line-entry-root {
+    padding: 24px;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-card {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px;
+    border-radius: 28px;
+    background: var(--cle-card);
+    border: 1px solid var(--cle-card-border);
+    box-shadow: var(--cle-shadow);
+    backdrop-filter: blur(10px);
+}
+
+.coilLineEntry-module-scope .coil-line-entry-hero {
+    display: block;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-intro h2 {
+    margin: 12px 0 0;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1;
+    color: var(--cle-title);
+}
+
+.coilLineEntry-module-scope .coil-line-entry-intro p {
+    max-width: 720px;
+    margin: 12px 0 0;
+    color: var(--cle-text);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-form {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr) minmax(180px, 320px);
+    gap: 18px;
+    align-items: end;
+    padding: 22px;
+    border-radius: 22px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.86) 0%, rgba(247, 250, 252, 0.96) 100%);
+    border: 1px solid rgba(226, 232, 240, 0.95);
+}
+
+.coilLineEntry-module-scope .coil-line-entry-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-field label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--cle-label);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-field input,
+.coilLineEntry-module-scope .coil-line-entry-field select {
+    min-height: 50px;
+    padding: 12px 15px;
+    border-radius: 14px;
+    border: 1px solid var(--cle-input-border);
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 14px;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-field input:focus,
+.coilLineEntry-module-scope .coil-line-entry-field select:focus {
+    outline: none;
+    border-color: var(--cle-accent);
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.16);
+}
+
+.coilLineEntry-module-scope .coil-line-entry-submit {
+    min-height: 50px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--cle-accent-deep) 0%, var(--cle-accent) 100%);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 12px 24px rgba(249, 115, 22, 0.2);
+}
+
+.coilLineEntry-module-scope .coil-line-entry-submit:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.coilLineEntry-module-scope .coil-line-entry-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-section {
+    margin-top: 28px;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-panel {
+    padding: 22px;
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 250, 252, 0.96) 100%);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.coilLineEntry-module-scope .coil-line-entry-section-header h3 {
+    margin: 0;
+    color: var(--cle-title);
+    font-size: 22px;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-section-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: flex-start;
+    margin-bottom: 14px;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-section-header p {
+    margin: 6px 0 0;
+    color: var(--cle-text);
+    font-size: 14px;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #fff0e6;
+    color: var(--cle-accent-deep);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-chip-muted {
+    background: #eef4fb;
+    color: #33506d;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-table-wrap {
+    overflow-x: auto;
+    border-radius: 18px;
+    border: 1px solid var(--cle-table-border);
+    background: #fff;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 760px;
+    background: #ffffff;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-table thead,
+.coilLineEntry-module-scope .coil-line-entry-table tbody,
+.coilLineEntry-module-scope .coil-line-entry-table tr {
+    background: #ffffff;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-table th,
+.coilLineEntry-module-scope .coil-line-entry-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5edf5;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-table th {
+    background: var(--cle-header-bg);
+    color: var(--cle-header-text);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-table td {
+    color: #0f172a;
+    background: #ffffff;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-table tbody tr:nth-child(odd) {
+    background: #ffffff;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-table tbody tr:nth-child(even) {
+    background: var(--cle-row-alt);
+}
+
+.coilLineEntry-module-scope .coil-line-entry-table tbody tr:hover,
+.coilLineEntry-module-scope .coil-line-entry-table tbody tr:hover td {
+    background: var(--cle-row-hover);
+}
+
+.coilLineEntry-module-scope .coil-line-entry-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(249, 115, 22, 0.12);
+    color: var(--cle-accent-deep);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+}
+
+.coilLineEntry-module-scope .coil-line-entry-empty {
+    text-align: center;
+    color: #64748b;
+    padding: 22px 16px;
+}
+
+@media (max-width: 768px) {
+    .coilLineEntry-module-scope .coil-line-entry-root {
+        padding: 16px;
+    }
+
+    .coilLineEntry-module-scope .coil-line-entry-card {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .coilLineEntry-module-scope .coil-line-entry-section-header {
+        flex-direction: column;
+    }
+
+    .coilLineEntry-module-scope .coil-line-entry-form {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    .coilLineEntry-module-scope .coil-line-entry-panel {
+        padding: 16px;
+    }
+
+    .coilLineEntry-module-scope .coil-line-entry-table {
+        min-width: 680px;
+    }
+}

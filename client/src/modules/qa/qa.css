@@ -1,0 +1,303 @@
+/* ===================================================== */
+/* SHARED MODULE TOP BAR (USED BY ALL MODULES) */
+/* ===================================================== */
+
+.module-header {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    /* background: #020617; */
+    /* border-bottom: 1px solid #1f2937; */
+    background: #0f172a;
+    border-bottom: 1px solid #1e293b;
+    font-size: 13px;
+    position: sticky;
+    top: 0;
+}
+
+.back-btn {
+    background: transparent;
+    border: none;
+    color: #93c5fd;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 4px 6px;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+.module-user {
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+.module-user strong {
+    color: #e5e7eb;
+    font-weight: 600;
+}
+
+/* ===================================================== */
+/* QA ROOT — FULL PAGE OWNER (HR STYLE) */
+/* ===================================================== */
+
+.qa-root {
+    min-height: calc(100vh - 44px);
+    /* background-color: #121417; */
+    background-color: #0b1120;
+    display: flex;
+    justify-content: center;
+    padding: 32px 24px;
+    font-family: "Inter", system-ui, sans-serif;
+    box-sizing: border-box;
+}
+
+/* ===================================================== */
+/* QA SURFACE — SINGLE CONTENT CONTAINER (HR STYLE) */
+/* ===================================================== */
+
+.qa-surface {
+    width: 100%;
+    max-width: 1250px;
+    /* background-color: #0f172a; */
+    background-color: #111827;
+    border-radius: 14px;
+    padding: 32px 40px;
+    box-sizing: border-box;
+}
+
+/* ===================================================== */
+/* QA PAGE TITLE */
+/* ===================================================== */
+
+.qa-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #f9fafb;
+    margin-bottom: 16px;
+}
+
+/* ===================================================== */
+/* TOP ACTIONS (VIEW LOGS BUTTON) */
+/* ===================================================== */
+
+.qa-top-actions {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+/* ===================================================== */
+/* BUTTON BASE */
+/* ===================================================== */
+
+.qa-root button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+/* Primary */
+.btn-primary {
+    /* background-color: #2563eb; */
+    background-color: #3b82f6;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    /* background-color: #1d4ed8; */
+    background-color: #2563eb;
+    transform: translateY(-1px);
+}
+
+/* Secondary */
+.btn-secondary {
+    background-color: #334155;
+    color: #e5e7eb;
+}
+
+.btn-secondary:hover {
+    background-color: #475569;
+}
+
+/* Delete */
+.btn-delete {
+    /* background-color: #dc2626; */
+    background-color: #ef4444;
+    color: white;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+}
+
+.btn-delete:hover {
+    /* background-color: #b91c1c; */
+    background-color: #dc2626;
+    transform: translateY(-1px);
+}
+
+.btn-delete.disabled {
+    /* background-color: #6b7280; */
+    background-color: #475569;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.disabled-text {
+    color: #9ca3af;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* View logs */
+.btn-view-logs {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    /* box-shadow: 0 4px 10px rgba(37, 99, 235, 0.35); */
+    box-shadow: 0 6px 18px rgba(59, 130, 246, 0.35);
+}
+
+.btn-view-logs:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5);
+}
+
+/* ===================================================== */
+/* SEARCH SECTION */
+/* ===================================================== */
+
+.search-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 220px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    /* border: 1px solid #374151;
+    background-color: #020617; */
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    color: #e5e7eb;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.search-input::placeholder {
+    color: #9ca3af;
+}
+
+/* ===================================================== */
+/* STATUS MESSAGE */
+/* ===================================================== */
+
+.status-message {
+    background: rgba(37, 99, 235, 0.15);
+    color: #93c5fd;
+    border: 1px solid rgba(37, 99, 235, 0.35);
+    padding: 14px 16px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+/* ===================================================== */
+/* TABLE */
+/* ===================================================== */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 16px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.styled-table th {
+    /* background-color: #1e3a8a; */
+    background-color: #1d4ed8;
+    color: white;
+}
+
+.styled-table td {
+    color: #e5e7eb;
+    border-bottom: 1px solid #273449;
+}
+
+.styled-table tr:nth-child(even) {
+    /* background-color: #020617; */
+    background-color: #0f172a;
+}
+
+.styled-table tr:hover {
+    /* background-color: #1e293b; */
+    background-color: #1f2937;
+}
+
+.styled-table th:last-child,
+.styled-table td:last-child {
+    text-align: center;
+}
+
+.no-data {
+    text-align: center;
+    color: #9ca3af;
+    font-style: italic;
+}
+
+.qa-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #fff;
+    z-index: 9999;
+    animation: slideIn 0.3s ease;
+}
+
+.qa-toast.success {
+    background-color: #28a745;
+}
+
+.qa-toast.error {
+    background-color: #dc3545;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

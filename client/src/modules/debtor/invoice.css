@@ -1,0 +1,79 @@
+.invoice-page {
+    padding: 0px;
+}
+
+.invoice-page h2 {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* FORM */
+.invoice-page .form-section {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.invoice-page .form-section label {
+    font-size: 13px;
+    margin-bottom: 4px;
+    color: #374151;
+}
+
+
+
+.invoice-page .form-section input,
+.invoice-page .form-section select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.invoice-page .form-section button {
+    width: 30%;
+    justify-self: center;
+    grid-column: span 3;
+    padding: 10px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.invoice-page .form-section button:hover {
+    background-color: #1d4ed8;
+}
+
+/* TABLE (FIXED - SCOPED) */
+.invoice-page table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-left: 10px;
+}
+
+.invoice-page thead {
+    background-color: #f3f4f6;
+}
+
+.invoice-page th,
+.invoice-page td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.invoice-page tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+
+
+/* ✅ NEW - group label + input together */
+.invoice-page .form-section > div {
+    display: flex;
+    flex-direction: column;
+}

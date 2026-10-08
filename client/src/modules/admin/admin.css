@@ -1,0 +1,441 @@
+.admin-module {
+  min-height: 100vh;
+  background: #0b0f14;
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-module .admin-content {
+  padding: 28px;
+}
+
+.admin-module .user-mgmt {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.admin-module .admin-section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.admin-module .admin-section-header h2 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 24px;
+  letter-spacing: 0;
+}
+
+.admin-module .admin-section-header p {
+  margin: 6px 0 0;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.admin-module .create-user-panel,
+.admin-module .users-panel {
+  background: #111827;
+  border: 1px solid #243244;
+  border-radius: 8px;
+  margin-bottom: 22px;
+  overflow: hidden;
+}
+
+.admin-module .panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid #243244;
+  background: #151d2a;
+}
+
+.admin-module .panel-heading h3 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 16px;
+  letter-spacing: 0;
+}
+
+.admin-module .panel-heading > div {
+  display: grid;
+  gap: 4px;
+}
+
+.admin-module .panel-heading span,
+.admin-module .role-editor-footer span {
+  color: #9ca3af;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.admin-module .user-search {
+  max-width: 320px;
+}
+
+.admin-module .create-user-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 360px) minmax(320px, 1fr);
+  gap: 20px;
+  padding: 18px;
+}
+
+.admin-module .credential-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-module input[type="text"],
+.admin-module input[type="password"],
+.admin-module input[type="search"] {
+  width: 100%;
+  min-height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 9px 11px;
+  font-size: 14px;
+}
+
+.admin-module input::placeholder {
+  color: #7c8798;
+}
+
+.admin-module input:focus {
+  outline: none;
+  border-color: #2dd4bf;
+  box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.16);
+}
+
+.admin-module .role-picker {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.admin-module .role-search {
+  margin-bottom: 12px;
+}
+
+.admin-module .role-groups {
+  display: grid;
+  gap: 14px;
+  max-height: 360px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.admin-module .role-group {
+  display: grid;
+  gap: 8px;
+}
+
+.admin-module .role-group-title {
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.admin-module .role-option {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid #253244;
+  border-radius: 8px;
+  background: #0f172a;
+  cursor: pointer;
+}
+
+.admin-module .role-option:hover {
+  border-color: #3b4a60;
+  background: #121c2c;
+}
+
+.admin-module .role-option input {
+  width: 16px;
+  height: 16px;
+  accent-color: #14b8a6;
+}
+
+.admin-module .role-option span {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.admin-module .role-option strong {
+  color: #e5e7eb;
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.admin-module .role-option small {
+  color: #8b98aa;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.admin-module .role-empty,
+.admin-module .table-empty,
+.admin-module .muted-text {
+  color: #8b98aa;
+  font-size: 14px;
+}
+
+.admin-module .users-table-wrap {
+  overflow-x: auto;
+}
+
+.admin-module .users-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.admin-module .users-table th {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.admin-module .users-table td {
+  padding: 14px;
+  border-top: 1px solid #243244;
+  color: #e5e7eb;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.admin-module .users-table tbody tr:hover {
+  background: #121a27;
+}
+
+.admin-module .username-cell {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.admin-module .role-chip-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.admin-module .role-chip {
+  display: inline-flex;
+  align-items: center;
+  max-width: 180px;
+  min-height: 24px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(20, 184, 166, 0.12);
+  border: 1px solid rgba(45, 212, 191, 0.24);
+  color: #99f6e4;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-module .role-chip.more {
+  background: rgba(148, 163, 184, 0.12);
+  border-color: rgba(148, 163, 184, 0.24);
+  color: #cbd5e1;
+}
+
+.admin-module .role-chip-button {
+  min-height: 24px;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.admin-module .role-chip-button:hover {
+  background: rgba(148, 163, 184, 0.2);
+}
+
+.admin-module .status-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.admin-module .status-pill.active {
+  background: rgba(34, 197, 94, 0.12);
+  color: #86efac;
+}
+
+.admin-module .status-pill.inactive {
+  background: rgba(248, 113, 113, 0.12);
+  color: #fca5a5;
+}
+
+.admin-module .row-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.admin-module .name-edit-row {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) auto auto;
+  align-items: center;
+  gap: 8px;
+  min-width: 360px;
+}
+
+.admin-module .name-edit-row input {
+  min-height: 36px;
+}
+
+.admin-module button {
+  border: 0;
+  border-radius: 6px;
+  min-height: 36px;
+  padding: 8px 12px;
+  color: #f8fafc;
+  background: #334155;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin-module button:hover {
+  filter: brightness(1.08);
+}
+
+.admin-module button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.admin-module .primary-action {
+  background: #0f766e;
+}
+
+.admin-module .danger-action {
+  background: #7f1d1d;
+}
+
+.admin-module .success-action {
+  background: #166534;
+}
+
+.admin-module .warning-action {
+  background: #b45309;
+}
+
+.admin-module .ghost-action {
+  background: transparent;
+  border: 1px solid #334155;
+  color: #cbd5e1;
+}
+
+.admin-module .role-editor-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(2, 6, 23, 0.62);
+}
+
+.admin-module .role-editor {
+  width: min(520px, 100%);
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background: #111827;
+  border-left: 1px solid #334155;
+  box-shadow: -18px 0 40px rgba(0, 0, 0, 0.35);
+}
+
+.admin-module .role-editor-header,
+.admin-module .role-editor-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid #243244;
+}
+
+.admin-module .role-editor-header h3 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 18px;
+}
+
+.admin-module .role-editor-header p {
+  margin: 4px 0 0;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.admin-module .role-editor > .role-picker {
+  flex: 1;
+  min-height: 0;
+  padding: 18px;
+}
+
+.admin-module .role-editor > .role-picker .role-groups {
+  max-height: none;
+}
+
+.admin-module .role-editor-footer {
+  border-top: 1px solid #243244;
+  border-bottom: 0;
+}
+
+.admin-module .role-editor-footer > div {
+  display: flex;
+  gap: 8px;
+}
+
+@media (max-width: 820px) {
+  .admin-module .admin-content {
+    padding: 18px;
+  }
+
+  .admin-module .create-user-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-module .panel-heading,
+  .admin-module .role-editor-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-module .role-editor-footer > div,
+  .admin-module .role-editor-footer button {
+    width: 100%;
+  }
+}

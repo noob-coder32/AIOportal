@@ -1,0 +1,230 @@
+.thickness-module-scope {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f3f4f6;
+}
+
+.thickness-module-scope .module-header {
+    flex: 0 0 44px;
+    z-index: 10;
+}
+
+.thickness-module-content {
+    flex: 1;
+    min-height: 0;
+    padding: 10px;
+}
+
+.thickness-page {
+    height: 100%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+}
+
+.thickness-page h2 {
+    flex: 0 0 auto;
+    padding: 8px 10px;
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+/* FORM */
+.thickness-page .form-section {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(130px, 1fr));
+    gap: 8px;
+    padding: 8px 10px;
+    margin-bottom: 0;
+}
+
+.thickness-page .form-group {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.thickness-page .form-section label {
+    margin-bottom: 3px;
+    color: #374151;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.thickness-page .form-section input,
+.thickness-page .form-section textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.thickness-page .form-section textarea {
+    height: 32px;
+    min-height: 32px;
+    resize: vertical;
+}
+
+.thickness-page .form-section button {
+    width: 100%;
+    align-self: end;
+    padding: 8px 10px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.thickness-page .form-section button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Centered submit row */
+.thickness-page .form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+}
+
+.thickness-page .form-actions button {
+    width: 140px;
+}
+
+.thickness-page .search-section {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 6px 10px 8px;
+    margin: 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+.thickness-page .search-section input {
+    width: min(320px, 100%);
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.thickness-page .search-section button {
+    padding: 7px 12px;
+    background: #64748b;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.thickness-page .search-section button:hover {
+    background: #475569;
+}
+
+/* TABLE */
+.thickness-page .table-wrapper {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: auto;
+    padding: 0 16px 16px;
+}
+
+.thickness-page table {
+    width: 100%;
+    min-width: 1120px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    font-size: 13px;
+}
+
+.thickness-page thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #f8fafc;
+}
+
+.thickness-page th,
+.thickness-page td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+    vertical-align: top;
+    color: #334155;
+}
+
+.thickness-page th {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    background: #f8fafc;
+}
+
+.thickness-page td {
+    background: #ffffff;
+}
+
+.thickness-page tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Status badges */
+.thickness-page .status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.thickness-page .status-badge.approved {
+    background-color: #10b981; /* green */
+}
+
+.thickness-page .status-badge.pending {
+    background-color: #f59e0b; /* amber */
+}
+
+@media (max-width: 1100px) {
+    .thickness-page .form-section {
+        grid-template-columns: repeat(3, minmax(140px, 1fr));
+    }
+}
+
+@media (max-width: 850px) {
+    .thickness-page .form-section {
+        grid-template-columns: 1fr;
+    }
+
+    .thickness-page .search-section {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .thickness-page .search-section input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .thickness-module-content {
+        padding: 8px;
+    }
+
+    .thickness-page {
+        overflow: auto;
+    }
+}
+

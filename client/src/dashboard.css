@@ -1,0 +1,178 @@
+/* ============================= */
+/* Root Layout */
+/* ============================= */
+
+.dashboard {
+    min-height: 100vh;
+    animation: dashboardFadeIn 0.70s ease;
+    display: flex;
+    flex-direction: column;
+    background: #0b0f14;
+    font-family: "Inter", system-ui, sans-serif;
+    color: #e5e7eb;
+}
+
+@keyframes dashboardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================= */
+/* Top Section */
+/* ============================= */
+
+.dashboard-top {
+    background: linear-gradient(180deg, #111827, #0f172a);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1f2937;
+}
+
+.dashboard-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+    color: #f9fafb;
+}
+
+.dashboard-subtitle {
+    font-size: 13px;
+    color: #9ca3af;
+    margin-top: 4px;
+}
+
+/* Logout Button */
+
+.logout-button {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.logout-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* ============================= */
+/* Body */
+/* ============================= */
+
+.dashboard-body {
+    flex: 1;
+    padding: 40px;
+    background:
+        linear-gradient(rgba(42, 29, 15, 0.774),
+            rgba(30, 15, 42, 0.692)),
+        url("./assets/images/arl-factory.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ============================= */
+/* Module Grid */
+/* ============================= */
+
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    max-width: 100%;
+}
+
+
+/* ============================= */
+/* Module Tile */
+/* ============================= */
+
+.module-tile {
+    background: linear-gradient(160deg, #1a1f26, #161b22);
+    border: 1px solid #2a2f36;
+    border-radius: 14px;
+    padding: 28px;
+    cursor: pointer;
+    position: relative;
+
+    /* fade in animation */
+    opacity: 0;
+    animation: tileFadeIn 0.70s ease forwards;
+    animation-delay: calc(80ms + (var(--tile-index, 0) * 50ms));
+
+    /* hover animation */
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+@keyframes tileFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover – only hovered tile */
+.module-tile:hover {
+    transform: translateY(-8px);
+    border-color: #3b82f6;
+    box-shadow: 0 18px 40px rgba(59, 130, 246, 0.25);
+}
+
+/* Tile Text */
+
+.module-tile h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #f9fafb;
+    margin-bottom: 8px;
+}
+
+.module-tile p {
+    font-size: 14px;
+    color: #9ca3af;
+    line-height: 1.5;
+}
+
+/* Arrow */
+
+.tile-arrow {
+    position: absolute;
+    right: 20px;
+    bottom: 18px;
+    font-size: 20px;
+    color: #3b82f6;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.module-tile:hover .tile-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}

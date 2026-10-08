@@ -1,0 +1,230 @@
+.defaultCredLimit-module-scope .default-cred-limit-page {
+    padding: 24px 28px;
+    min-height: 100%;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-header h2 {
+    margin: 0 0 6px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-header p {
+    margin: 0;
+    color: #4b5563;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-scheduler {
+    margin-bottom: 20px;
+    padding: 18px 20px;
+    border: 1px solid #dbe3ef;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-scheduler-head,
+.defaultCredLimit-module-scope .default-cred-limit-scheduler-controls,
+.defaultCredLimit-module-scope .default-cred-limit-scheduler-status {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-scheduler-head {
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-scheduler h3 {
+    margin: 0 0 4px;
+    font-size: 17px;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-scheduler p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-status {
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-status.is-enabled {
+    color: #166534;
+    background: #dcfce7;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-status.is-disabled {
+    color: #475569;
+    background: #e2e8f0;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-toggle,
+.defaultCredLimit-module-scope .default-cred-limit-time-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-time-field {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-time-field input {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 14px;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-scheduler-status {
+    flex-wrap: wrap;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #e5e7eb;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-scheduler-status strong {
+    color: #1f2937;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-error {
+    flex-basis: 100%;
+    color: #b91c1c;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-header input,
+.defaultCredLimit-module-scope .default-cred-limit-table input {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    background: #fff;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-header input {
+    width: 320px;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-header .secondary-btn {
+    white-space: nowrap;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-header input:focus,
+.defaultCredLimit-module-scope .default-cred-limit-table input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-table-wrap {
+    overflow-x: auto;
+    border: 1px solid #dbe3ef;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-table thead {
+    background: #0f172a;
+    color: #fff;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-table th,
+.defaultCredLimit-module-scope .default-cred-limit-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-table input {
+    width: 180px;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-actions {
+    white-space: nowrap;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-actions button {
+    margin-right: 8px;
+}
+
+.defaultCredLimit-module-scope .primary-btn,
+.defaultCredLimit-module-scope .secondary-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.defaultCredLimit-module-scope .primary-btn {
+    background: #2563eb;
+    color: #fff;
+}
+
+.defaultCredLimit-module-scope .primary-btn:hover {
+    background: #1d4ed8;
+}
+
+.defaultCredLimit-module-scope .secondary-btn {
+    background: #64748b;
+    color: #fff;
+}
+
+.defaultCredLimit-module-scope .secondary-btn:hover {
+    background: #475569;
+}
+
+.defaultCredLimit-module-scope .default-cred-limit-empty {
+    text-align: center;
+    color: #6b7280;
+    padding: 24px;
+}
+
+@media (max-width: 768px) {
+    .defaultCredLimit-module-scope .default-cred-limit-page {
+        padding: 18px;
+    }
+
+    .defaultCredLimit-module-scope .default-cred-limit-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .defaultCredLimit-module-scope .default-cred-limit-header input {
+        width: 100%;
+    }
+
+    .defaultCredLimit-module-scope .default-cred-limit-scheduler-controls {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}

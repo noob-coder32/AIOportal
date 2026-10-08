@@ -1,0 +1,282 @@
+New Module Pattern Template
+
+Use this checklist whenever you add a new module to this project.
+
+==================================================
+1) BACKEND STRUCTURE
+==================================================
+
+Create these files:
+- backend/db/<moduleId>.db.js
+- backend/modules/<moduleId>/<moduleId>.routes.js
+
+Recommended naming:
+- moduleId = lowerCamelCase or kebab-case key used everywhere in routing and access control
+- example: `employeeBonus`, `medicalAllowance`, `debtorGstin`
+
+Backend DB file pattern:
+
+```js
+// backend/db/<moduleId>.db.js
+const { query, execute } = require("./mssql");
+
+const DB_NAME = process.env.DB_NAME;
+
+async function getAllItems() {
+    return query(
+        DB_NAME,
+        `
+        SELECT *
+        FROM your_table
+        ORDER BY id DESC
+        `
+    );
+}
+
+async function createItem(payload) {
+    return execute(
+        DB_NAME,
+        `
+        INSERT INTO your_table (col1, col2)
+        VALUES (@col1, @col2)
+        `,
+        payload
+    );
+}
+
+module.exports = {
+    getAllItems,
+    createItem,
+};
+```
+
+Backend route file pattern:
+
+```js
+// backend/modules/<moduleId>/<moduleId>.routes.js
+const express = require("express");
+const router = express.Router();
+
+const moduleDb = require("../../db/<moduleId>.db");
+
+router.get("/", async (req, res) => {
+    try {
+        const rows = await moduleDb.getAllItems();
+        res.json(rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Failed to fetch data" });
+    }
+});
+
+router.post("/", async (req, res) => {
+    try {
+        const result = await moduleDb.createItem(req.body);
+        res.json({ message: "Created successfully", result });
+    } catch (err) { 
+        res.status(500).json({ message: "Create failed" });
+    }
+});
+
+module.exports = router;
+```
+
+Backend route rules:
+- Keep validation in the route before calling DB helpers.
+- Keep SQL inside the DB file, not in the route.
+- Use `try/catch` around every handler.
+- Return JSON messages on success/failure.
+- Use `req.user` only after auth middleware is attached in `server.js`.
+
+==================================================
+2) SERVER INTEGRATION
+==================================================
+
+After creating the route file, wire it into `backend/server.js`:
+
+```js
+const newModuleRoutes = require("./modules/<moduleId>/<moduleId>.routes");
+```
+
+Then mount it:
+
+```js
+app.use(
+    "/<route-path>",
+    authMiddleware,
+    requireAnyRole(...getRouteRoles("<moduleId>")),
+    newModuleRoutes
+);
+```
+
+Also update module access files when needed:
+- backend/modules/moduleAccess.js
+  - add the new module entry
+  - make sure `roleName` matches the route role used by `getRouteRoles`
+- frontend/src/modules/modules.js
+  - add the dashboard card entry
+
+If the module needs a special exception:
+- follow the existing pattern in `server.js`
+- keep the route name, module id, and role name consistent
+
+==================================================
+3) FRONTEND STRUCTURE
+==================================================
+
+Create these files:
+- frontend/src/modules/<moduleId>/<ModuleName>Module.jsx
+- frontend/src/modules/<moduleId>/<ModuleName>App.jsx
+- frontend/src/modules/<moduleId>/<moduleId>.css
+
+Frontend wrapper pattern:
+
+```jsx
+import React from "react";
+import ModuleShell from "../../components/ModuleShell";
+import "./myModule.css";
+import MyModuleApp from "./MyModuleApp";
+
+const MyModule = ({ onBack, username }) => {
+    return (
+        <ModuleShell
+            moduleScopeClass="myModule-module-scope"
+            onBack={onBack}
+            username={username}
+        >
+            <MyModuleApp />
+        </ModuleShell>
+    );
+};
+
+export default MyModule;
+```
+
+Frontend app component pattern:
+
+```jsx
+import { useEffect, useState } from "react";
+import api from "../../api";
+import "./myModule.css";
+
+function MyModuleApp() {
+    const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [toast, setToast] = useState({ message: "", type: "" });
+
+    useEffect(() => {
+        fetchItems();
+    }, []);
+
+    const fetchItems = async () => {
+        try {
+            setLoading(true);
+            const res = await api.get("/<route-path>");
+            setItems(res.data);
+        } catch (err) {
+            setToast({
+                message: err.response?.data?.message || "Failed to load data",
+                type: "error",
+            });
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <div className="myModule-root">
+            {/* module UI here */}
+        </div>
+    );
+}
+
+export default MyModuleApp;
+```
+
+Frontend CSS rules:
+- Scope every module selector under `.<moduleId>-module-scope`
+- Do not override global styles unless needed
+- Use the shared header classes only:
+  - `.module-header`
+  - `.back-btn`
+  - `.module-user`
+- Keep tables, forms, and buttons inside the module scope
+
+Example CSS scope:
+
+```css
+.myModule-module-scope {
+    width: 100%;
+}
+
+.myModule-module-scope .table-wrapper {
+    overflow-x: auto;
+}
+
+.myModule-module-scope .styled-table {
+    width: 100%;
+}
+```
+
+==================================================
+4) APP WIRING
+==================================================
+
+Update frontend/src/App.jsx:
+- import the new module component
+- add a render block for `activeModule.id === "<moduleId>"`
+- pass `username`, `displayName`, and `onBack`
+
+Example:
+
+```jsx
+if (activeModule.id === "myModule") {
+    return (
+        <MyModule
+            username={loggedInUser}
+            displayName={loggedInFullName || loggedInUser}
+            onBack={() => {
+                setActiveModule(null);
+                sessionStorage.removeItem("activeModuleId");
+            }}
+        />
+    );
+}
+```
+
+Update frontend/src/modules/modules.js:
+- add the new module card
+- make sure `id` matches the `activeModule.id` used in `App.jsx`
+- make sure `allowedRoles` matches the backend role name
+
+==================================================
+5) FINAL CHECKLIST
+==================================================
+
+- backend/db/<moduleId>.db.js created
+- backend/modules/<moduleId>/<moduleId>.routes.js created
+- route mounted in backend/server.js
+- module added to backend/modules/moduleAccess.js if it needs role access
+- module added to frontend/src/modules/modules.js
+- frontend module wrapper created with ModuleShell
+- frontend app component created
+- CSS scoped under a unique root class
+- API calls point to the correct backend route path
+- auth and role protection match on backend and frontend
+
+==================================================
+6) QUICK COPY PROMPT
+==================================================
+
+When making a new module in this repo, follow the exact existing pattern:
+- backend DB helper file in `backend/db/<moduleId>.db.js`
+- backend route file in `backend/modules/<moduleId>/<moduleId>.routes.js`
+- mount the route in `backend/server.js` with `authMiddleware` and `requireAnyRole(...getRouteRoles("<moduleId>"))`
+- add the module to `backend/modules/moduleAccess.js` if role access is needed
+- frontend wrapper in `frontend/src/modules/<moduleId>/<ModuleName>Module.jsx` using `ModuleShell`
+- frontend main page in `frontend/src/modules/<moduleId>/<ModuleName>App.jsx`
+- module CSS in `frontend/src/modules/<moduleId>/<moduleId>.css`
+- register the module in `frontend/src/App.jsx`
+- register the module card in `frontend/src/modules/modules.js`
+- keep all CSS scoped under `.<moduleId>-module-scope`
+- use the shared header classes only for topbar layout
