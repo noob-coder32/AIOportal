@@ -40,14 +40,22 @@ async function addEmployee(
             employee_code,
             employee_name,
             email,
-            unit_name
+            unit_name,
+            status,
+            is_active,
+            mail_backup,
+            created_at
         )
         VALUES
         (
             @employee_code,
             @employee_name,
             @email,
-            @unit_name
+            @unit_name,
+            0,
+            '1',
+            @email,
+            GETDATE()
         )
         `,
         {
@@ -77,7 +85,8 @@ async function updateEmployee(
             employee_code = @employee_code,
             employee_name = @employee_name,
             email = @email,
-            unit_name = @unit_name
+            unit_name = @unit_name,
+            mail_backup = @email
         WHERE id = @id
         `,
         {
