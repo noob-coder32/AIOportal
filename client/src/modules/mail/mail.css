@@ -34,6 +34,192 @@
 }
 
 /* =========================
+   MODULE HERO HEADER
+========================= */
+
+.mail-page .mail-header-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 26px;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.96) 0%, rgba(18, 32, 60, 0.9) 50%, rgba(11, 18, 32, 0.96) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.22);
+    border-radius: 14px;
+    box-shadow: 0 8px 28px -4px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.mail-page .mail-header-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 100%;
+    background: radial-gradient(circle at 15% 10%, rgba(59, 130, 246, 0.16), transparent 70%);
+    pointer-events: none;
+}
+
+.mail-page .mail-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 1;
+}
+
+.mail-page .mail-header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 4px 10px;
+    width: fit-content;
+    background: rgba(59, 130, 246, 0.14);
+    border: 1px solid rgba(59, 130, 246, 0.32);
+    border-radius: 20px;
+    color: #60a5fa;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.mail-page .mail-badge-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mail-page .mail-header-title {
+    margin: 2px 0 0 0;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #ffffff 40%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mail-page .mail-header-desc {
+    margin: 0;
+    font-size: 13.5px;
+    color: #94a3b8;
+    max-width: 540px;
+    line-height: 1.5;
+}
+
+.mail-page .mail-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.mail-page .mail-stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 10px 16px;
+    background: rgba(11, 15, 25, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    min-width: 100px;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.mail-page .mail-stat-card:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    background: rgba(15, 23, 42, 0.85);
+}
+
+.mail-page .mail-stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+}
+
+.mail-page .mail-stat-val {
+    font-size: 18px;
+    font-weight: 700;
+    color: #f1f5f9;
+    font-variant-numeric: tabular-nums;
+}
+
+.mail-page .mail-stat-val.has-selection {
+    color: #60a5fa;
+}
+
+.mail-page .mail-status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 2px;
+}
+
+.mail-page .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+.mail-page .status-dot.dot-pulsing {
+    background: #f59e0b;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.8);
+    animation: mailPulseGlow 1.5s infinite;
+}
+
+.mail-page .status-dot.dot-finished {
+    background: #3b82f6;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.7);
+}
+
+@keyframes mailPulseGlow {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.mail-page .mail-stat-status-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.mail-page .mail-header-refresh-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: rgba(30, 58, 95, 0.45);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    border-radius: 10px;
+    color: #93c5fd;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    align-self: stretch;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.mail-page .mail-header-refresh-btn:hover {
+    background: rgba(59, 130, 246, 0.25);
+    border-color: #60a5fa;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* =========================
    SECTION CARDS
 ========================= */
 
@@ -624,6 +810,46 @@
 
     .mail-page .mail-container {
         gap: 12px;
+    }
+
+    /* Header adapts cleanly to mobile */
+    .mail-page .mail-header-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 18px 16px;
+        border-radius: 12px;
+    }
+
+    .mail-page .mail-header-title {
+        font-size: 20px;
+    }
+
+    .mail-page .mail-header-desc {
+        font-size: 13px;
+    }
+
+    .mail-page .mail-header-right {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .mail-page .mail-stat-card {
+        flex: 1 1 calc(50% - 8px);
+        min-width: 80px;
+        padding: 8px 12px;
+    }
+
+    .mail-page .mail-stat-card.status-card {
+        flex: 1 1 100%;
+    }
+
+    .mail-page .mail-header-refresh-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 13px;
     }
 
     .mail-page .section-card {
