@@ -75,9 +75,12 @@ function formatDisplayDate(value, separator = "/") {
 async function getPendingDates() {
     const targetDate = previousDateKey();
     const settings = await debtor1MailDb.getSettings();
-    const lastSuccessfulDate = toDateKey(settings.lastSuccessfulReportDate);
-    const firstDate = lastSuccessfulDate
-        ? addDays(lastSuccessfulDate, 1)
+    const lastSentDbDate = await debtor1MailDb.getLastSentReportDate();
+    const lastSentKey = toDateKey(lastSentDbDate);
+    const lastSettingsKey = toDateKey(settings.lastSuccessfulReportDate);
+    const baseDate = lastSentKey || lastSettingsKey;
+    const firstDate = baseDate
+        ? addDays(baseDate, 1)
         : targetDate;
     if (firstDate > targetDate) return [];
 

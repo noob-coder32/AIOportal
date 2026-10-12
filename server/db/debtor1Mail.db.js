@@ -195,6 +195,19 @@ async function markDelivery(reportDate, status, rowCount = 0, errorMessage = nul
     );
 }
 
+async function getLastSentReportDate() {
+    await ensureSetup();
+    const rows = await query(
+        DB_NAME,
+        `
+        SELECT MAX(report_date) AS last_sent_date
+        FROM dbo.debtor1_mail_delivery_log
+        WHERE status = 'sent'
+        `
+    );
+    return rows[0]?.last_sent_date || null;
+}
+
 module.exports = {
     ensureSetup,
     getSettings,
@@ -204,5 +217,6 @@ module.exports = {
     markRunFailed,
     getCreditLimitChanges,
     getDeliveryStatuses,
+    getLastSentReportDate,
     markDelivery,
 };
