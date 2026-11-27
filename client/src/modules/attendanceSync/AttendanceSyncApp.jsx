@@ -239,8 +239,8 @@ function AttendanceSyncApp() {
         <div className="attendance-sync-page">
             <section className="attendance-sync-hero">
                 <div>
-                    <p className="attendance-sync-eyebrow">Attendance Sync AWS</p>
-                    <h3>Sync punching data from local DB to AWS </h3>
+                    <p className="attendance-sync-eyebrow">Attendance Sync Azure</p>
+                    <h3>Sync punching data from local DB to Azure </h3>
                     <p className="attendance-sync-copy">
                         Pending rows are checked only within the last 2 months. Manual sync runs up to 20 batches of
                         10,000 rows.
@@ -255,9 +255,9 @@ function AttendanceSyncApp() {
 
             <section className="attendance-sync-grid">
                 <article className="attendance-sync-card attendance-sync-stat-card">
-                    <span>Latest AWS Checktime</span>
+                    <span>Latest Azure Checktime</span>
                     <strong>{formatDateTime(latestAwsCheckTime)}</strong>
-                    {awsStatus === "failed" ? <small className="is-error">AWS unavailable</small> : null}
+                    {awsStatus === "failed" ? <small className="is-error">Azure unavailable</small> : null}
                 </article>
 
                 <article className="attendance-sync-card attendance-sync-stat-card">
@@ -281,7 +281,7 @@ function AttendanceSyncApp() {
                     <div className="attendance-sync-card-head">
                         <div>
                             <h3>Controls</h3>
-                            <p>Only rows missing in AWS within the last 2 months are considered pending.</p>
+                            <p>Only rows missing in Azure within the last 2 months are considered pending.</p>
                         </div>
                     </div>
 
@@ -352,7 +352,7 @@ function AttendanceSyncApp() {
 
                             <button
                                 type="button"
-                                className="attendance-sync-btn attendance-sync-btn-ghost"
+                                className="attendance-sync-btn attendance-sync-save-button"
                                 onClick={handleSaveSettings}
                                 disabled={loading || syncing || savingSettings}
                             >
@@ -379,7 +379,7 @@ function AttendanceSyncApp() {
                             <strong>{formatDateTime(runtime.nextRunAt)}</strong>
                         </div>
                         <div>
-                            <span>AWS status</span>
+                            <span>Azure status</span>
                             <strong className={awsStatus === "failed" ? "is-error" : ""}>
                                 {formatLabel(awsStatus)}
                             </strong>
@@ -416,7 +416,7 @@ function AttendanceSyncApp() {
                         </div>
                         {awsError ? (
                             <div>
-                                <span>AWS error</span>
+                                <span>Azure error</span>
                                 <strong className="is-error">{awsError}</strong>
                             </div>
                         ) : null}
@@ -482,7 +482,7 @@ function AttendanceSyncApp() {
                 <div className="attendance-sync-card-head">
                     <div>
                         <h3>Sync History</h3>
-                        <p>Each row is one sync run, so you can see how far AWS moved forward on every attempt.</p>
+                        <p>Each row is one sync run, so you can see how far Azure moved forward on every attempt.</p>
                     </div>
                     <span className="attendance-sync-pill">{logs.length} rows</span>
                 </div>
@@ -556,7 +556,7 @@ function AttendanceSyncApp() {
                                     <th>Batches</th>
                                     <th>Inserted</th>
                                     <th>Remaining</th>
-                                    <th>AWS Before</th>
+                                    <th>Azure Before</th>
                                     <th>Last Synced After</th>
                                     <th>Error / Skip</th>
                                 </tr>

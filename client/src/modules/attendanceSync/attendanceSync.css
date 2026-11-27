@@ -201,6 +201,12 @@
     background: #eef4f2;
 }
 
+.attendance-sync-module-scope .attendance-sync-save-button {
+    min-width: 144px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #4338ca 0%, #3730a3 100%);
+}
+
 .attendance-sync-module-scope .attendance-sync-settings-panel {
     margin-top: 20px;
     padding: 18px;
@@ -261,6 +267,7 @@
 
 .attendance-sync-module-scope .attendance-sync-form-row {
     margin-top: 18px;
+    align-items: flex-end;
 }
 
 .attendance-sync-module-scope .attendance-sync-toggle-row h4 {
